@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAWS | My Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">PAWS<span>®</span></div>
+
+        <div class="sidebar-menu">
+            <a href="index.html">
+                <i class="fas fa-home"></i> Home
+            </a>
+
+            <a href="profile.html" class="active">
+                <i class="fas fa-user"></i> My Profile
+            </a>
+
+            <a href="favorites.html">
+                <i class="fas fa-heart"></i> Favorite Pets
+            </a>
+
+            <a href="applications.html">
+                <i class="fas fa-file-alt"></i> My Applications
+            </a>
+
+            <a href="settings.html">
+                <i class="fas fa-cog"></i> Settings
+            </a>
+        </div>
+
+        <div class="sidebar-bottom">
+            <a href="signin.html" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> Log Out
+            </a>
+        </div>
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP HEADER -->
+        <header class="topbar">
+            <div>
+                <h2>My Profile</h2>
+                <p>Manage your personal information and account.</p>
+            </div>
+
+            <div class="top-right">
+                <span class="welcome">Welcome back!</span>
+                <i class="fas fa-bell notification"></i>
+            </div>
+        </header>
+
+
+        <!-- PROFILE BANNER -->
+        <section class="profile-banner">
+
+            <div class="profile-info">
+                <div class="profile-picture">
+                    <img id="profileImage"
+                    src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
+                    alt="Profile Picture">
+                </div>
+
+                <div class="profile-details">
+                    <h1 id="displayName">Your Name</h1>
+                    <p id="displayEmail">your@email.com</p>
+                    <span class="member-badge">
+                        <i class="fas fa-paw"></i> PAWS Member
+                    </span>
+                </div>
+            </div>
+
+            <button class="edit-btn" id="editProfileBtn">
+                <i class="fas fa-pen"></i> Edit Profile
+            </button>
+
+        </section>
+
+
+        <!-- DASHBOARD CARDS -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon purple">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div>
+                    <h3 id="favoriteCount">0</h3>
+                    <p>Favorite Pets</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon pink">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div>
+                    <h3 id="applicationCount">0</h3>
+                    <p>Applications</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">
+                    <i class="fas fa-paw"></i>
+                </div>
+                <div>
+                    <h3>PAWS</h3>
+                    <p>Pet Lover</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- PERSONAL INFORMATION -->
+        <section class="content-card">
+            <div class="section-heading">
+                <h2>Personal Information</h2>
+                <button class="text-btn" id="editInfoBtn">Edit</button>
+            </div>
+
+            <div class="information-grid">
+
+                <div class="info-item">
+                    <label>Full Name</label>
+                    <p id="infoName">Your Name</p>
+                </div>
+
+                <div class="info-item">
+                    <label>Email Address</label>
+                    <p id="infoEmail">your@email.com</p>
+                </div>
+
+                <div class="info-item">
+                    <label>Phone Number</label>
+                    <p id="infoPhone">Not provided</p>
+                </div>
+
+                <div class="info-item">
+                    <label>Location</label>
+                    <p id="infoLocation">Not provided</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- FAVORITE PETS -->
+        <section class="content-card" id="favorites">
+            <div class="section-heading">
+                <h2>My Favorite Pets</h2>
+                <a href="index.html" class="text-btn">Find Pets</a>
+            </div>
+
+            <div class="empty-state">
+                <i class="fas fa-heart"></i>
+                <h3>No Favorite Pets Yet</h3>
+                <p>Pets you add to your favorites will appear here.</p>
+            </div>
+        </section>
+
+
+        <!-- APPLICATIONS -->
+        <section class="content-card" id="applications">
+            <div class="section-heading">
+                <h2>My Adoption Applications</h2>
+            </div>
+
+            <div class="empty-state">
+                <i class="fas fa-file-alt"></i>
+                <h3>No Applications Yet</h3>
+                <p>Your adoption applications will appear here.</p>
+            </div>
+        </section>
+
+
+        <!-- SETTINGS -->
+        <section class="content-card" id="settings">
+            <div class="section-heading">
+                <h2>Account Settings</h2>
+            </div>
+
+            <div class="settings-item">
+                <div>
+                    <h4>Profile Information</h4>
+                    <p>Update your name, phone number, and location.</p>
+                </div>
+                <button class="text-btn" id="settingsEditBtn">Edit</button>
+            </div>
+
+            <div class="settings-item">
+                <div>
+                    <h4>Account Security</h4>
+                    <p>Keep your account information secure.</p>
+                </div>
+                <i class="fas fa-lock"></i>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>© 2026 PAWS. All Rights Reserved.</p>
+            <p>Find a friend. Give a pet a home. ❤️</p>
+        </footer>
+
+    </main>
+</div>
+
+
+<!-- EDIT PROFILE MODAL -->
+<div class="modal" id="editModal">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h2>Edit Your Profile</h2>
+            <button id="closeModal">&times;</button>
+        </div>
+
+        <form id="profileForm">
+
+            <label>Full Name</label>
+            <input type="text" id="editName" required>
+
+            <label>Email Address</label>
+            <input type="email" id="editEmail" required>
+
+            <label>Phone Number</label>
+            <input type="tel" id="editPhone">
+
+            <label>Location</label>
+            <input type="text" id="editLocation">
+
+            <label>Profile Picture URL</label>
+            <input type="url" id="editImage" placeholder="https://example.com/photo.jpg">
+
+            <button type="submit" class="save-btn">Save Changes</button>
+
+        </form>
+
+    </div>
+</div>
+
+
+<script src="profile.js"></script>
+</body>
+</html>

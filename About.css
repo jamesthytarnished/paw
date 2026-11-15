@@ -1,0 +1,836 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f0eff2;
+    color: #30263a;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.navbar {
+    min-height: 65px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 5%;
+    position: relative;
+    z-index: 1000;
+    overflow: visible;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo {
+    color: #7000c9;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.logo span {
+    font-size: 9px;
+    vertical-align: top;
+}
+
+.logo small {
+    display: block;
+    font-size: 6px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow: visible;
+}
+
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 46px;
+    padding: 0 23px;
+    background: linear-gradient(135deg, #7000c9, #52008f);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(112,0,201,0.25);
+    transition: all 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+    background: linear-gradient(135deg, #8500ed, #6500ad);
+    transform: translateY(-2px);
+}
+
+.dropdown-toggle .arrow {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    margin-top: -4px;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown.open > .dropdown-toggle .arrow {
+    transform: rotate(225deg);
+    margin-top: 4px;
+}
+
+
+/* =====================================
+   DROPDOWN MENUS
+===================================== */
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    width: 245px;
+    background: #3d006d;
+    border-radius: 12px;
+    padding: 10px 0;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(12px);
+    transition: opacity 0.3s ease,
+                transform 0.3s ease,
+                visibility 0.3s ease;
+
+    z-index: 2000;
+}
+
+.nav-dropdown.open > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.dropdown-heading {
+    padding: 13px 20px;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 11px 20px;
+    color: #e8d5fa;
+    font-size: 12px;
+    transition: 0.25s;
+}
+
+.dropdown-item:hover {
+    background: #7000c9;
+    color: white;
+    padding-left: 26px;
+}
+
+
+/* =====================================
+   ABOUT PETS MENU
+===================================== */
+
+.about-menu {
+    width: 290px;
+    max-height: 75vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.about-group {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.about-group:last-child {
+    border-bottom: none;
+}
+
+.about-group-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.about-group-toggle:hover,
+.about-group-link:hover {
+    background: #7000c9;
+}
+
+.about-group-toggle .arrow {
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.about-group.open .about-group-toggle .arrow {
+    transform: rotate(225deg);
+}
+
+
+/* =====================================
+   NESTED SUBMENUS
+===================================== */
+
+.about-submenu {
+    max-height: 0;
+    overflow: hidden;
+    background: #2c004e;
+    transition: max-height 0.35s ease;
+}
+
+.about-group.open .about-submenu {
+    max-height: 500px;
+}
+
+.about-submenu a {
+    display: block;
+    padding: 10px 20px 10px 32px;
+    color: #e8d5fa;
+    font-size: 12px;
+}
+
+.about-submenu a:hover {
+    background: #7000c9;
+}
+
+.about-group-link {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    font-size: 13px;
+}
+
+
+/* =====================================
+   HEADER RIGHT
+===================================== */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.favorite {
+    color: #51465a;
+    font-size: 19px;
+}
+
+.signin-btn {
+    background: #7000c9;
+    color: white;
+    border-radius: 25px;
+    padding: 9px 22px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.signin-btn:hover {
+    background: #52008f;
+}
+
+
+/* =====================================
+   BREADCRUMB
+===================================== */
+
+.breadcrumb {
+    padding: 15px 6%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    font-size: 10px;
+    color: #7000c9;
+}
+
+.breadcrumb a {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    color: #777;
+}
+
+.breadcrumb .current {
+    color: #333;
+}
+
+
+/* =====================================
+   PAGE LAYOUT
+===================================== */
+
+.page-layout {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    display: grid;
+    grid-template-columns: minmax(0, 2.1fr) minmax(250px, 1fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.main-content {
+    min-width: 0;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: 400;
+    color: #30263a;
+    margin-bottom: 20px;
+}
+
+
+/* =====================================
+   INTRODUCTION
+===================================== */
+
+.intro-box {
+    background: white;
+    border: 1px solid #ded9e3;
+    border-radius: 4px;
+    padding: 17px;
+    color: #333;
+    font-size: 12px;
+    line-height: 1.75;
+    margin-bottom: 24px;
+}
+
+
+/* =====================================
+   OUR MISSION
+===================================== */
+
+.mission-section {
+    margin-bottom: 30px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #30263a;
+}
+
+.view-all {
+    color: #7000c9;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.view-all:hover {
+    color: #52008f;
+    text-decoration: underline;
+}
+
+
+/* =====================================
+   MISSION CARDS
+===================================== */
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    max-width: 540px;
+}
+
+.mission-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e3dfe7;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(55,0,90,0.13);
+}
+
+.mission-image {
+    width: 100%;
+    height: 145px;
+    overflow: hidden;
+    background: #f1e7fc;
+}
+
+.mission-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.mission-card:hover .mission-image img {
+    transform: scale(1.06);
+}
+
+
+/* PURPLE MISSION ILLUSTRATION */
+
+.mission-illustration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1e7fc;
+    color: #7000c9;
+}
+
+.mission-illustration i {
+    font-size: 85px;
+}
+
+.mission-info {
+    padding: 13px;
+    min-height: 80px;
+}
+
+.card-category {
+    display: block;
+    font-size: 9px;
+    font-weight: 600;
+    color: #51465a;
+    margin-bottom: 8px;
+}
+
+.mission-info h3 {
+    color: #7000c9;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 48px;
+}
+
+
+/* =====================================
+   PET MATCH CARD
+===================================== */
+
+.match-card {
+    background: #7000c9;
+    border-radius: 8px;
+    overflow: hidden;
+    color: white;
+}
+
+.match-images {
+    height: 110px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.match-images img {
+    width: 33.333%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.match-heart {
+    position: absolute;
+    top: 15px;
+    right: 14px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: #7000c9;
+    border-radius: 50%;
+}
+
+.match-info {
+    padding: 14px 12px;
+    text-align: center;
+}
+
+.match-info h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.match-info p {
+    font-size: 10px;
+    margin-bottom: 13px;
+}
+
+.match-button {
+    display: block;
+    background: #52008f;
+    color: white;
+    padding: 11px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.match-button:hover {
+    background: #390064;
+}
+
+
+/* =====================================
+   ADVERTISEMENT
+===================================== */
+
+.advertisement {
+    text-align: center;
+    color: #888;
+    font-size: 10px;
+    padding: 4px;
+}
+
+
+/* =====================================
+   SHELTER SEARCH
+===================================== */
+
+.shelter-search {
+    background: white;
+    border-radius: 7px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.shelter-search h3 {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #30263a;
+}
+
+.shelter-search form {
+    display: flex;
+    flex-direction: column;
+}
+
+.shelter-search label {
+    font-size: 9px;
+    color: #777;
+    margin: 5px 0 3px;
+}
+
+.shelter-search input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    font-size: 10px;
+    margin-bottom: 7px;
+}
+
+.shelter-search input:focus {
+    border-color: #7000c9;
+    box-shadow: 0 0 0 2px rgba(112,0,201,0.1);
+}
+
+.shelter-search button {
+    width: 100%;
+    background: #7000c9;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.shelter-search button:hover {
+    background: #52008f;
+}
+
+.search-message {
+    color: #7000c9;
+    font-size: 10px;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+
+/* =====================================
+   SCROLL REVEAL ANIMATION
+===================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.footer {
+    background: #35005f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 25px 6%;
+    font-size: 11px;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 10px 3%;
+    }
+
+    .main-nav {
+        gap: 10px;
+    }
+
+    .dropdown-toggle {
+        height: 40px;
+        padding: 0 15px;
+        font-size: 11px;
+    }
+
+    .nav-right {
+        gap: 12px;
+    }
+
+    .page-layout {
+        width: 95%;
+        grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr);
+        gap: 15px;
+    }
+
+    .mission-image {
+        height: 125px;
+    }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        min-height: 60px;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 10px 4%;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .dropdown-toggle {
+        height: 38px;
+        padding: 0 15px;
+        font-size: 10px;
+        gap: 8px;
+    }
+
+    .nav-right {
+        margin-left: auto;
+    }
+
+    .signin-btn {
+        padding: 8px 14px;
+        font-size: 9px;
+    }
+
+    .dropdown-menu {
+        width: 220px;
+    }
+
+    .about-menu {
+        width: 250px;
+    }
+
+    .breadcrumb {
+        padding: 12px 4%;
+        font-size: 9px;
+    }
+
+    .page-layout {
+        width: 94%;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .main-content,
+    .sidebar {
+        width: 100%;
+    }
+
+    .page-title {
+        font-size: 24px;
+        margin-bottom: 14px;
+    }
+
+    .intro-box {
+        padding: 13px;
+        font-size: 10px;
+        line-height: 1.7;
+    }
+
+    .section-heading h2 {
+        font-size: 17px;
+    }
+
+    .mission-grid {
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    .mission-image {
+        height: 125px;
+    }
+
+    .mission-info {
+        padding: 10px;
+    }
+
+    .mission-info h3 {
+        font-size: 11px;
+    }
+
+    .sidebar {
+        padding-top: 0;
+    }
+
+    .match-card,
+    .shelter-search {
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        font-size: 9px;
+    }
+
+}
+
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 380px) {
+
+    .dropdown-toggle {
+        height: 35px;
+        padding: 0 12px;
+        font-size: 9px;
+    }
+
+    .mission-image {
+        height: 105px;
+    }
+
+    .mission-info h3 {
+        font-size: 10px;
+    }
+
+}

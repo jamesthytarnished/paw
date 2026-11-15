@@ -1,0 +1,784 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f0eff2;
+    color: #29212f;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.navbar {
+    min-height: 65px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 5%;
+    position: relative;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo {
+    color: #7000c9;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.logo span {
+    font-size: 9px;
+    vertical-align: top;
+}
+
+.logo small {
+    display: block;
+    font-size: 6px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* NAVIGATION */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-dropdown {
+    position: relative;
+}
+
+/* PURPLE PILL BUTTONS */
+
+.navbar .main-nav .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 46px;
+    padding: 0 23px;
+    background: linear-gradient(135deg, #7000c9, #52008f);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(112,0,201,0.25);
+    transition: all 0.3s ease;
+}
+
+.navbar .main-nav .dropdown-toggle:hover {
+    background: linear-gradient(135deg, #8500ed, #6500ad);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 17px rgba(112,0,201,0.3);
+}
+
+.dropdown-toggle .arrow {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    margin-top: -4px;
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown.open > .dropdown-toggle .arrow {
+    transform: rotate(225deg);
+    margin-top: 4px;
+}
+
+/* DROPDOWN MENUS */
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 245px;
+    background: #3d006d;
+    border-radius: 12px;
+    padding: 10px 0;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.nav-dropdown.open > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-heading {
+    padding: 13px 20px;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 11px 20px;
+    color: #e8d5fa;
+    font-size: 12px;
+    transition: 0.25s;
+}
+
+.dropdown-item:hover {
+    background: #7000c9;
+    color: white;
+    padding-left: 26px;
+}
+
+/* ALL ABOUT PETS SUBMENUS */
+
+.about-menu {
+    width: 290px;
+    max-height: 75vh;
+    overflow-y: auto;
+}
+
+.about-group {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.about-group-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+.about-group-toggle:hover,
+.about-group-link:hover {
+    background: #7000c9;
+}
+
+.about-group-toggle .arrow {
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.about-group.open .about-group-toggle .arrow {
+    transform: rotate(225deg);
+}
+
+.about-submenu {
+    max-height: 0;
+    overflow: hidden;
+    background: #2c004e;
+    transition: max-height 0.35s ease;
+}
+
+.about-group.open .about-submenu {
+    max-height: 500px;
+}
+
+.about-submenu a {
+    display: block;
+    padding: 10px 20px 10px 32px;
+    color: #e8d5fa;
+    font-size: 12px;
+}
+
+.about-submenu a:hover {
+    background: #7000c9;
+    padding-left: 38px;
+}
+
+.about-group-link {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* RIGHT HEADER */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.favorite {
+    color: #51465a;
+    font-size: 19px;
+}
+
+.signin-btn {
+    background: #7000c9;
+    color: white;
+    border-radius: 25px;
+    padding: 9px 22px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.signin-btn:hover {
+    background: #52008f;
+}
+
+/* =========================================
+   PROMOTIONAL BANNER
+========================================= */
+
+.promo-banner {
+    min-height: 48px;
+    background: #470080;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    padding: 5px 35px;
+    position: relative;
+}
+
+.close-promo {
+    position: absolute;
+    left: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.promo-icon {
+    width: 30px;
+    height: 30px;
+    background: white;
+    color: #7000c9;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.promo-text strong {
+    font-size: 11px;
+}
+
+.promo-text p {
+    font-size: 9px;
+}
+
+.stars {
+    color: #38d48b;
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+.get-app {
+    background: white;
+    color: #470080;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+/* =========================================
+   BREADCRUMB
+========================================= */
+
+.breadcrumb {
+    width: 100%;
+    padding: 15px 6%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    font-size: 10px;
+    color: #7000c9;
+}
+
+.breadcrumb a {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    color: #777;
+}
+
+.breadcrumb .current {
+    color: #333;
+}
+
+/* =========================================
+   MAIN ANNIVERSARY CONTAINER
+========================================= */
+
+.anniversary-container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 0 auto 45px;
+    padding: 22px;
+    background: white;
+    border-radius: 8px;
+}
+
+.page-title {
+    font-size: 27px;
+    font-weight: 400;
+    color: #4a3b55;
+    margin-bottom: 18px;
+}
+
+/* =========================================
+   ANNIVERSARY HERO
+========================================= */
+
+.anniversary-hero {
+    width: 100%;
+    height: 390px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.anniversary-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(66, 0, 105, 0.45);
+}
+
+.anniversary-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 190px;
+    height: 190px;
+    background: white;
+    color: #6330a3;
+    border: 7px solid white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.heart-symbol {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #f33142;
+    font-size: 27px;
+}
+
+.number-30 {
+    font-size: 75px;
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -7px;
+}
+
+.years-text {
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.hero-brand {
+    color: #7000c9;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.hero-brand span {
+    font-size: 9px;
+    vertical-align: top;
+}
+
+/* =========================================
+   STORY ROWS
+========================================= */
+
+.story-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.story-text {
+    padding: 8px 12px;
+}
+
+.story-text h2 {
+    color: #7000c9;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.story-text p {
+    color: #777;
+    font-size: 12px;
+    line-height: 1.9;
+    margin-bottom: 12px;
+}
+
+.text-link {
+    display: inline-block;
+    color: #7000c9;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+.text-link:hover {
+    color: #52008f;
+}
+
+.story-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.story-image:hover img {
+    transform: scale(1.04);
+}
+
+/* ALTERNATING STORY ROWS */
+
+.reverse-row .story-image {
+    order: 2;
+}
+
+.reverse-row .story-text {
+    order: 1;
+}
+
+/* =========================================
+   CELEBRATION STRIP
+========================================= */
+
+.celebration-strip {
+    width: 100%;
+    background: #7000c9;
+    color: white;
+    text-align: center;
+    padding: 13px 10px;
+    font-size: 12px;
+    margin: 5px 0 20px;
+}
+
+.celebration-strip a {
+    color: white;
+    font-weight: 700;
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background: #35005f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 25px 6%;
+    font-size: 11px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        padding: 10px 3%;
+    }
+
+    .main-nav {
+        gap: 10px;
+    }
+
+    .navbar .main-nav .dropdown-toggle {
+        height: 40px;
+        padding: 0 15px;
+        font-size: 11px;
+    }
+
+    .nav-right {
+        gap: 12px;
+    }
+
+    .anniversary-container {
+        width: 95%;
+        padding: 17px;
+    }
+
+    .anniversary-hero {
+        height: 300px;
+    }
+
+    .story-image {
+        height: 190px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .navbar {
+        min-height: 60px;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 10px 4%;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .navbar .main-nav .dropdown-toggle {
+        height: 38px;
+        padding: 0 15px;
+        font-size: 10px;
+        gap: 8px;
+    }
+
+    .nav-right {
+        margin-left: auto;
+    }
+
+    .signin-btn {
+        padding: 8px 14px;
+        font-size: 9px;
+    }
+
+    .dropdown-menu {
+        width: 220px;
+    }
+
+    .about-menu {
+        width: 250px;
+    }
+
+    .promo-banner {
+        min-height: 42px;
+        gap: 9px;
+        padding: 5px 28px;
+    }
+
+    .promo-text strong {
+        font-size: 9px;
+    }
+
+    .promo-text p,
+    .stars {
+        display: none;
+    }
+
+    .get-app {
+        padding: 5px 12px;
+        font-size: 8px;
+    }
+
+    .breadcrumb {
+        padding: 12px 4%;
+        font-size: 9px;
+    }
+
+    .anniversary-container {
+        width: 94%;
+        padding: 13px;
+    }
+
+    .page-title {
+        font-size: 21px;
+        margin-bottom: 13px;
+    }
+
+    .anniversary-hero {
+        height: 180px;
+        margin-bottom: 20px;
+    }
+
+    .anniversary-logo {
+        width: 105px;
+        height: 105px;
+        border-width: 4px;
+    }
+
+    .number-30 {
+        font-size: 43px;
+        letter-spacing: -4px;
+    }
+
+    .years-text {
+        font-size: 8px;
+    }
+
+    .hero-brand {
+        font-size: 14px;
+    }
+
+    .heart-symbol {
+        font-size: 15px;
+        top: 5px;
+        right: 7px;
+    }
+
+    .story-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .story-text {
+        padding: 3px 4px;
+    }
+
+    .story-text h2 {
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
+    .story-text p {
+        font-size: 9px;
+        line-height: 1.7;
+        margin-bottom: 7px;
+    }
+
+    .text-link {
+        font-size: 9px;
+    }
+
+    .story-image {
+        height: 115px;
+    }
+
+    .celebration-strip {
+        font-size: 9px;
+        padding: 9px 5px;
+        margin-bottom: 15px;
+    }
+
+    .reverse-row .story-image {
+        order: 2;
+    }
+
+    .reverse-row .story-text {
+        order: 1;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .navbar .main-nav .dropdown-toggle {
+        height: 35px;
+        padding: 0 12px;
+        font-size: 9px;
+    }
+
+    .anniversary-container {
+        padding: 10px;
+    }
+
+    .story-row {
+        gap: 8px;
+    }
+
+    .story-image {
+        height: 105px;
+    }
+
+    .story-text h2 {
+        font-size: 11px;
+    }
+
+    .story-text p {
+        font-size: 8px;
+    }
+}

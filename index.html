@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PAWS - FIND YOUR ANIMAL BUDDY</title>
+
+    <link rel="stylesheet" href="frontpage.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+            PAWS
+            <span>®</span>
+        </div>
+
+        <!-- NAVIGATION -->
+        <nav class="main-nav">
+
+            <!-- FIND A PET DROPDOWN -->
+            <div class="nav-dropdown">
+
+                <button class="dropdown-toggle" id="petDropdown" aria-expanded="false">
+                    FIND A PET
+                    <span class="arrow"></span>
+                </button>
+
+                <div class="dropdown-menu" id="petMenu">
+
+                    <div class="dropdown-heading">
+                        <span>Find Other Pets</span>
+                        <span class="heading-arrow">⌃</span>
+                    </div>
+
+                    <a href="dogs.html" class="dropdown-item">
+                        <span class="pet-icon">🐕</span>
+                        <span>Dogs</span>
+                    </a>
+
+                    <a href="cats.html" class="dropdown-item">
+                        <span class="pet-icon">🐈</span>
+                        <span>Cats</span>
+                    </a>
+
+                    <a href="rabbits.html" class="dropdown-item">
+                        <span class="pet-icon">🐇</span>
+                        <span>Rabbits</span>
+                    </a>
+
+                    <a href="small-furry.html" class="dropdown-item">
+                        <span class="pet-icon">🐹</span>
+                        <span>Small & Furry</span>
+                    </a>
+
+                    <a href="other-pets.html" class="dropdown-item">
+                        <span class="pet-icon">🐠</span>
+                        <span>Scales, Fins, & Other</span>
+                    </a>
+
+                    <a href="birds.html" class="dropdown-item">
+                        <span class="pet-icon">🕊️</span>
+                        <span>Birds</span>
+                    </a>
+
+                    <a href="horses.html" class="dropdown-item">
+                        <span class="pet-icon">🐎</span>
+                        <span>Horses</span>
+                    </a>
+
+                    <a href="barnyard.html" class="dropdown-item">
+                        <span class="pet-icon">🐖</span>
+                        <span>Barnyard</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ALL ABOUT PETS DROPDOWN -->
+            <div class="nav-dropdown about-dropdown">
+
+                <button class="dropdown-toggle" id="aboutDropdown" aria-expanded="false">
+                    ALL ABOUT PETS
+                    <span class="arrow"></span>
+                </button>
+
+                <div class="dropdown-menu about-menu">
+
+                    <!-- ADOPT OR GET INVOLVED -->
+                    <div class="about-group">
+
+                        <button class="about-group-toggle" aria-expanded="false">
+                            Adopt or Get Involved
+                            <span class="arrow"></span>
+                        </button>
+
+                        <div class="about-submenu">
+
+                            <a href="AdoptOrGetInvolved.html">
+                                Explore Adopt or Get Involved
+                            </a>
+
+                            <a href="About.html">
+                                About PAWS
+                            </a>
+
+                            <a href="Adopting.html">
+                                Adopting Pets
+                            </a>
+
+                            <a href="Shelter.html">
+                                Animal Shelters & Rescues
+                            </a>
+
+                            <a href="Foundation.html">
+                                PAWS Foundation
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DOGS & PUPPIES -->
+                    <div class="about-group">
+
+                        <button class="about-group-toggle" aria-expanded="false">
+                            Dogs & Puppies
+                            <span class="arrow"></span>
+                        </button>
+
+                        <div class="about-submenu">
+
+                            <a href="https://www.petfinder.com/dogs-and-puppies/">
+                                Explore Dogs & Puppies
+                            </a>
+
+                            <a href="https://www.petfinder.com/dogs-and-puppies/adoption/">
+                                Dog Adoption
+                            </a>
+
+                            <a href="https://www.petfinder.com/dogs-and-puppies/breeds/">
+                                Dog Breeds
+                            </a>
+
+                            <a href="https://www.petfinder.com/dogs-and-puppies/feeding/">
+                                Feeding Your Dog
+                            </a>
+
+                            <a href="https://www.petfinder.com/dogs-and-puppies/behavior/">
+                                Dog Behavior
+                            </a>
+
+                            <a href="https://www.petfinder.com/dogs-and-puppies/health-wellness/">
+                                Dog Health & Wellness
+                            </a>
+
+                            <a href="https://www.petfinder.com/dogs-and-puppies/training/">
+                                Dog Training
+                            </a>
+
+                            <a href="https://www.petfinder.com/dogs-and-puppies/information/">
+                                Other Dog Information
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CATS & KITTENS -->
+                    <div class="about-group">
+
+                        <button class="about-group-toggle" aria-expanded="false">
+                            Cats & Kittens
+                            <span class="arrow"></span>
+                        </button>
+
+                        <div class="about-submenu">
+
+                            <a href="https://www.petfinder.com/cats-and-kittens/">
+                                Explore Cats & Kittens
+                            </a>
+
+                            <a href="https://www.petfinder.com/cats-and-kittens/adoption/">
+                                Cat Adoption
+                            </a>
+
+                            <a href="https://www.petfinder.com/cats-and-kittens/breeds/">
+                                Cat Breeds
+                            </a>
+
+                            <a href="https://www.petfinder.com/cats-and-kittens/feeding/">
+                                Feeding Your Cat
+                            </a>
+
+                            <a href="https://www.petfinder.com/cats-and-kittens/behavior/">
+                                Cat Behavior
+                            </a>
+
+                            <a href="https://www.petfinder.com/cats-and-kittens/health-wellness/">
+                                Cat Health & Wellness
+                            </a>
+
+                            <a href="https://www.petfinder.com/cats-and-kittens/training/">
+                                Cat Training
+                            </a>
+
+                            <a href="https://www.petfinder.com/cats-and-kittens/information/">
+                                Other Cat Information
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OTHER TYPES OF PETS -->
+                    <div class="about-group">
+
+                        <a class="about-group-link" href="https://www.petfinder.com/other-pets/">
+                            Other Types of Pets
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+        <!-- HEADER RIGHT SIDE -->
+        <div class="header-right">
+
+            <span class="heart">❤️</span>
+
+            <a href="signin.html" class="signin">
+                ♟ SIGN IN
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="search-box">
+
+            <input type="text" placeholder="Search terrier, kitten, etc.">
+
+            <input type="text" placeholder="Enter your location">
+
+            <button type="button">⌕</button>
+
+        </div>
+
+        <h1>Find your New Best Friend and Adopt a Pet</h1>
+
+        <p>
+            Browse pets from our network of animal shelters and rescues.
+        </p>
+
+    </section>
+
+
+    <!-- PET CATEGORIES -->
+    <section class="categories">
+
+        <a href="dogs.html" class="category">
+            <span class="icon">🐶</span>
+            <p>Dogs</p>
+        </a>
+
+        <a href="cats.html" class="category">
+            <span class="icon">🐱</span>
+            <p>Cats</p>
+        </a>
+
+        <a href="other-pets.html" class="category">
+            <span class="icon">🐾</span>
+            <p>Other Animals</p>
+        </a>
+
+        <a href="shelters.html" class="category">
+            <span class="icon">🏠</span>
+            <p>Shelters & Rescues</p>
+        </a>
+
+    </section>
+
+
+    <!-- IMPACT SECTION -->
+    <section class="impact">
+
+        <h2>30 YEARS OF IMPACT AND JOY</h2>
+
+        <div class="impact-container">
+
+            <!-- FIRST CARD -->
+            <div class="impact-card">
+
+                <div class="impact-icon">🏠</div>
+
+                <h3>
+                    NEW PET?<br>
+                    YOU'VE GOT THIS
+                </h3>
+
+                <p>
+                    Get tips for a smooth adoption with this helpful checklist.
+                </p>
+
+                <a href="LearnMore.html" class="learn-more">LEARN MORE</a>
+
+            </div>
+
+
+            <!-- SECOND CARD -->
+            <div class="impact-card">
+
+                <div class="impact-icon">♡</div>
+
+                <h3>
+                    30 YEARS<br>
+                    OF HAPPY TAILS
+                </h3>
+
+                <p>
+                    Celebrate the pets and people that make PAWS possible.
+                </p>
+
+                <a href="LearnMore2.html" class="learn-more">LEARN MORE</a>
+
+            </div>
+
+
+            <!-- THIRD CARD -->
+            <div class="impact-card">
+
+                <div class="impact-icon">🐈 🐕</div>
+
+                <h3>
+                    FEED<br>
+                    A SHELTER PET
+                </h3>
+
+                <p>
+                    Donate a meal to a pet waiting in a shelter with one click.
+                </p>
+
+                <a href="LearnMore3.html" class="learn-more">LEARN MORE</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>© 2026 PAWS. All Rights Reserved.</p>
+
+        <p>Find a friend. Give a pet a home. ❤️</p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="login.js"></script>
+
+</body>
+</html>
